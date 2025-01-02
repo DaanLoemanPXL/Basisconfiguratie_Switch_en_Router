@@ -3,6 +3,8 @@ configure terminal
 
 hostname Switch-1-PXL
 
+enable secret pxlsecret
+
 interface vlan 1
  ip address 192.168.1.2 255.255.255.0
  no shutdown
@@ -12,9 +14,8 @@ interface FastEthernet0/1
  switchport access vlan 1
  no shutdown
 
-enable secret cisco123
 line vty 0 4
- password cisco123
+ password pxl
  login
 
 end
